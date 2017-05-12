@@ -1,0 +1,11 @@
+# Powered by Zyro.com
+DirectoryIndex index.php index.cgi index.html
+ErrorDocument 401 "Unauthorized"
+ErrorDocument 403 "Forbidden"
+RewriteEngine On
+RewriteBase /
+#### PERSISTENT CONTENT ####
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ zyro/$1 [L,QSA]
+
